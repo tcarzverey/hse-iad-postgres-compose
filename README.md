@@ -24,7 +24,7 @@ docker compose up --build
 ## Подключение
 БД будет доступна по следующему DSN: `postgresql://postgres:hsepassword@localhost:6431/postgres`, т.е. данные для подключения следующие:
 - username: `postgres`
-- password: `hseuser`
+- password: `hsepassword`
 - address: `localhost`
 - port: `6431`
 - database: `postgres`
