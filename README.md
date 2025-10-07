@@ -46,7 +46,7 @@ make rundb-background # запустит только базу, и вернет 
 ```
 
 ## Подключение
-Если вы не меняли параметры в compose, БД будет доступна по следующему DSN: `postgresql://postgres:hsepassword@localhost:6431/postgres`, т.е. данные для подключения следующие:
+Если вы не меняли параметры в compose, БД будет доступна по следующему DSN: `postgresql://hseuser:hsepassword@localhost:6431/hsedb`, т.е. данные для подключения следующие:
 - username: `hseuser`
 - password: `hsepassword`
 - address: `localhost`
