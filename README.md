@@ -5,11 +5,11 @@ Docker compose для поднятия простой PostgreSQL базы для
 ### Скачивание этого репозитория
 Если вы не работали с гитхабом/гитом, эта часть для вас
 
-**Вариант 1:** скачайте архив с кодом из [репозитория](https://github.com/levtul/hse-iad-postgres-compose/) (зеленая кнопка code  -> download zip), разрахивируйте, и откройте получившуюся папку в консоли/любимой IDE
+**Вариант 1:** скачайте архив с кодом из [репозитория](https://github.com/tcarzverey/hse-iad-postgres-compose/) (зеленая кнопка code  -> download zip), разрахивируйте, и откройте получившуюся папку в консоли/любимой IDE
 
 **Вариант 2:** Если у вас нормально настроен git и в гитхаб добавлен ssh ключ, то можно выполнить следующие команды
 ```bash
-git clone https://github.com/levtul/hse-iad-postgres-compose/
+git clone https://github.com/tcarzverey/hse-iad-postgres-compose/
 cd hse-iad-postgres-compose
 ```
 
@@ -47,11 +47,11 @@ make rundb-background # запустит только базу, и вернет 
 
 ## Подключение
 Если вы не меняли параметры в compose, БД будет доступна по следующему DSN: `postgresql://postgres:hsepassword@localhost:6431/postgres`, т.е. данные для подключения следующие:
-- username: `postgres`
+- username: `hseuser`
 - password: `hsepassword`
 - address: `localhost`
 - port: `6431`
-- database: `postgres`
+- database: `hsedb`
 
 ## Частые ошибки
 * `Bind for 0.0.0.0:6431 failed: port is already allocated`: у вас занят порт 6431, надо либо поменять в компоузе на какой то другой, и подключаться к БД по новому порту, либо освободить порт 6431
