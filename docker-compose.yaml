@@ -7,21 +7,20 @@ services:
     # restart: always
     build:
       dockerfile: goose/Dockerfile
-    command: ["postgresql://postgres:hsepassword@db:5432/postgres", "up"]
+    command: ["postgresql://hseuser:hsepassword@db:5432/hsedb", "up"]
     depends_on:
       db:
         condition: service_healthy
 
   db:
    restart: always
-   image: postgres:16
+   image: postgres:18
    environment:
      - POSTGRES_PASSWORD=hsepassword
-     - PGDATA=/var/lib/postgresql/data/pgdata
+     - POSTGRES_USER=hseuser
+     - POSTGRES_DB=hsedb
    ports:
      - '6431:5432'
-   volumes:
-     - ./postgres-data:/var/lib/postgresql/data
    healthcheck:
      test: [ "CMD-SHELL", "pg_isready -U postgres -d postgres" ]
      interval: 10s
